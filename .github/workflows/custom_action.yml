@@ -1,0 +1,28 @@
+name: Custom Workflow with Email Step
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: 23f2005006@ds.study.iitm.ac.in - Setup environment
+      run: |
+        echo "Setting up environment..."
+        echo "Current directory: $(pwd)"
+        echo "Python version: $(python --version)"
+        
+    - name: Run tests
+      run: |
+        echo "Running tests..."
+        echo "This is a test step"
+        
+    - name: Finalize
+      run: echo "Workflow completed successfully"
